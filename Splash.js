@@ -43,10 +43,14 @@ const styles = StyleSheet.create({
       alignItems: 'center',
     },
     title: {
-      fontSize: 40,
+      fontSize: 26,
+      color: '#fff',
+      marginBottom: 10
     },
     text: {
-      fontSize: 20,
+      fontSize: 18,
+      color: '#fff',
+      marginBottom: 10
     },
     button: {
       borderRadius: 30,

@@ -1,12 +1,12 @@
-import React               from 'react';
+import React                    from 'react'
 import { 
   View, 
   StyleSheet
-}                               from 'react-native';
-import { NavigationContainer }  from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+}                               from 'react-native'
+import { NavigationContainer }  from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
 import Login                    from './Login'
-import Splash                    from './Splash'
+import Splash                   from './Splash'
 
 const Stack = createStackNavigator();
 
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   }
-});
+})
 
 
 export default App;
