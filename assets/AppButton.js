@@ -13,7 +13,7 @@ const AppButton = ({ onPress, title }) =>
 const styles = StyleSheet.create({
   appButtonContainer: {
     elevation: 8,
-    backgroundImage: "linear-gradient(#009688, black)",
+    backgroundImage: "linear-gradient(#02AFA1, #02675F)",
     borderRadius: 30,
     paddingVertical: 10,
     paddingHorizontal: 12,

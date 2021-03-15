@@ -197,6 +197,7 @@ const styles = StyleSheet.create({
   },
   footer_text: {
     fontSize: 18,
+    color: '#014C46'
   },
   footer: {
     flex: 1,
