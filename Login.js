@@ -1,44 +1,35 @@
-import { StatusBar }            from 'expo-status-bar'
 import React, { useState }      from 'react'
 import { 
   StyleSheet, 
   Text, 
   View, 
   TextInput,
-  TouchableOpacity
 }                               from 'react-native'
 import * as Animatable          from 'react-native-animatable'
 import { FontAwesomeIcon }      from '@fortawesome/react-native-fontawesome'
 import { faLock }               from '@fortawesome/free-solid-svg-icons'
+import AppButton                from './assets/AppButton'
 
-const AppButton = ({ onPress, title }) => (
-  <TouchableOpacity onPress={onPress} style={styles.appButtonContainer}>
-    <Text style={styles.appButtonText}>{title}</Text>
-  </TouchableOpacity>
-)
-
-const Login = ({ navigation }) => {
+const Login = () => {
   const [data, setData] = useState({
-    email: '',
+    name: '',
     password: '',
     isValidUser: false,
     isValidPassword: false,
-    emailError: false,
+    nameError: false,
     passwordError: false,
   })
 
   const signIn = () => {
-    console.log('data ,', data)
-    
-    if(data.email.length === 0){
+    if(data.name.length === 0){
       setData({
         ...data,
-        emailError: true,
+        nameError: true,
       })      
     } else {
       setData({
         ...data,
-        emailError: false,
+        nameError: false,
       })
     }
       
@@ -54,35 +45,34 @@ const Login = ({ navigation }) => {
      })
   }
       
-    if(data.email.length === 0 && data.password.length === 0){
-      console.log('BOTH error - ', data.password.length === 0)
+    if(data.name.length === 0 && data.password.length === 0){
       setData({
         ...data,
         passwordError: true,
-        emailError: true,
+        nameError: true,
       })
     } 
       
 
     if(data.password === 'peanutbutter'){
-      alert('YEEEEEEh!')
+      alert('PASSWORD CORRECT!')
     }
   }
 
-  const emailChange = (e) => {
+  const nameChange = (e) => {
       const val = e.target.value;
 
     if(/[^a-zA-Z0-9.]/.test(val)){
       setData({
         ...data,
-        email: val,
-        emailError: true,
+        name: val,
+        nameError: true,
       })
     } else {
       setData({
         ...data,
-        email: val,
-        emailError: false,
+        name: val,
+        nameError: false,
       })
     }
   }
@@ -110,7 +100,7 @@ const Login = ({ navigation }) => {
     <View style={styles.container}>
       <View style={styles.header}>
 
-        <Text style={styles.label}>Email</Text>
+        <Text style={styles.label}>Name</Text>
         <View style={styles.action}>
           <FontAwesomeIcon 
             color="#009387"
@@ -118,13 +108,13 @@ const Login = ({ navigation }) => {
             icon={ faLock } />
           <TextInput
             style={styles.textInput}
-            placeholder="Your Email"
+            placeholder="Your Name"
             autoCapitalize="none"
-            onChange={emailChange}
+            onChange={nameChange}
           />
         </View>
         {
-          data.emailError ?         
+          data.nameError ?         
             <Animatable.View animation="fadeInLeft" duration={500}>
               <Text style={styles.errorMsg}>Please enter correct Username</Text>
             </Animatable.View> : null
@@ -166,11 +156,12 @@ const Login = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 40,
     backgroundColor: 'white'
   },
   header: {
     flex: 2,
+    padding: 50,
+    paddingTop: 20,
   },
   text: {
     flex: 2,
@@ -180,7 +171,7 @@ const styles = StyleSheet.create({
   },
   errorMsg: {
     color: 'red',
-    fontSize: 10
+    fontSize: 12,
   },
   action: {
     flexDirection: 'row',
@@ -202,20 +193,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     padding: 16
-  },
-  appButtonContainer: {
-    elevation: 8,
-    backgroundColor: "#009688",
-    borderRadius: 10,
-    paddingVertical: 10,
-    paddingHorizontal: 12
-  },
-  appButtonText: {
-    fontSize: 18,
-    color: "#fff",
-    fontWeight: "bold",
-    alignSelf: "center",
-    textTransform: "uppercase"
   },
   footer: {
     flex: 1,

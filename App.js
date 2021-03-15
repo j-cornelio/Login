@@ -10,18 +10,16 @@ import Splash                   from './Splash'
 
 const Stack = createStackNavigator();
 
-function App() {
-  return (
-    <View style={styles.container}>
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen name="Splash" component={Splash} />
-          <Stack.Screen name="Login" component={Login} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </View>
-  )
-}
+const App = () => 
+  <View style={styles.container}>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Splash" component={Splash} />
+        <Stack.Screen name="Login" component={Login} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  </View>
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -29,4 +27,4 @@ const styles = StyleSheet.create({
 })
 
 
-export default App;
+export default App
