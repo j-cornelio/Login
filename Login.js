@@ -42,8 +42,8 @@ const Login = () => {
       setData({
         ...data,
         passwordError: false,
-     })
-  }
+      })
+    }
       
     if(data.name.length === 0 && data.password.length === 0){
       setData({
@@ -53,14 +53,13 @@ const Login = () => {
       })
     } 
       
-
     if(data.password === 'peanutbutter'){
       alert('PASSWORD CORRECT!')
     }
   }
 
   const nameChange = (e) => {
-      const val = e.target.value;
+    const val = e.target.value;
 
     if(/[^a-zA-Z0-9.]/.test(val)){
       setData({
@@ -80,7 +79,7 @@ const Login = () => {
   const passwordChange = (e) => {
     const val = e.target.value;
 
-    if(/[^a-zA-Z0-9]/.test(val)){
+    if(/[^a-zA-Z0-9!@#$%^&*()-_+=.?]/.test(val)){
       setData({
         ...data,
         password: val,
@@ -147,7 +146,9 @@ const Login = () => {
       </View>
 
       <View animation="fadeInUpBig" style={styles.footer}>
-        <Text style={styles.title}>Julio Cornelio</Text>
+        <Text style={styles.footer_text}>Cap Gemini</Text>
+        <Text style={styles.footer_text}>Julio Cornelio</Text>
+        <Text style={styles.footer_text}>New York City</Text>
       </View>
     </View>
   )  
@@ -193,6 +194,9 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     padding: 16
+  },
+  footer_text: {
+    fontSize: 18,
   },
   footer: {
     flex: 1,

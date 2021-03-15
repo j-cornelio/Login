@@ -36,42 +36,42 @@ const Splash = ({ navigation }) =>
   </View>
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-    },
-    header: {
-      flex: 2,
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-    title: {
-      fontSize: 26,
-      color: '#fff',
-      marginBottom: 10
-    },
-    text: {
-      fontSize: 18,
-      color: '#fff',
-      marginBottom: 10
-    },
-    button: {
-      borderRadius: 30,
-      width: 100
-    },
-    logo: {
-      width: 192,
-      height: 185
-    },
-    footer: {
-      flex: 1,
-      width: '100%',
-      borderTopLeftRadius: 30,
-      borderTopRightRadius: 30,
-      backgroundColor: '#009387',
-      paddingHorizontal: 50,
-      paddingVertical: 30
-    },
-  })
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  header: {
+    flex: 2,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  title: {
+    fontSize: 26,
+    color: '#fff',
+    marginBottom: 10
+  },
+  text: {
+    fontSize: 18,
+    color: '#fff',
+    marginBottom: 10
+  },
+  button: {
+    borderRadius: 30,
+    width: 100
+  },
+  logo: {
+    width: 192,
+    height: 185
+  },
+  footer: {
+    flex: 1,
+    width: '100%',
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
+    backgroundColor: '#009387',
+    paddingHorizontal: 50,
+    paddingVertical: 30
+  },
+})
 
 export default Splash

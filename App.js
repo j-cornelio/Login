@@ -14,8 +14,8 @@ const App = () =>
   <View style={styles.container}>
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Splash" component={Splash} />
-        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Splash Page" component={Splash} />
+        <Stack.Screen name="Login Page" component={Login} />
       </Stack.Navigator>
     </NavigationContainer>
   </View>
