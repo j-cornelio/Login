@@ -58,9 +58,7 @@ const Login = () => {
     }
   }
 
-  const nameChange = (e) => {
-    const val = e.target.value;
-
+  const nameChange = (val) => {
     if(/[^a-zA-Z0-9.]/.test(val)){
       setData({
         ...data,
@@ -76,8 +74,7 @@ const Login = () => {
     }
   }
 
-  const passwordChange = (e) => {
-    const val = e.target.value;
+  const passwordChange = (val) => {
 
     if(/[^a-zA-Z0-9!@#$%^&*()-_+=.?]/.test(val)){
       setData({
@@ -88,7 +85,7 @@ const Login = () => {
     } else {
       setData({
         ...data,
-        password: e.target.value,
+        password: val,
         isValidPassword: true,
         passwordError: false,
       })
@@ -109,7 +106,7 @@ const Login = () => {
             style={styles.textInput}
             placeholder="Your Name"
             autoCapitalize="none"
-            onChange={nameChange}
+            onChangeText={text => nameChange(text)}
           />
         </View>
         {
@@ -130,7 +127,7 @@ const Login = () => {
             placeholder="Your Password"
             secureTextEntry={true}
             autoCapitalize="none"
-            onChange={passwordChange}
+            onChangeText={text => passwordChange(text)}
           />
         </View>
         {
