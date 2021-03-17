@@ -13,7 +13,7 @@ const Stack = createStackNavigator();
 const App = () => 
   <View style={styles.container}>
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="Splash">
         <Stack.Screen name="Splash" component={Splash} />
         <Stack.Screen name="Login" component={Login} />
       </Stack.Navigator>
