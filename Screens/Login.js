@@ -8,7 +8,7 @@ import {
 import * as Animatable          from 'react-native-animatable'
 import { FontAwesomeIcon }      from '@fortawesome/react-native-fontawesome'
 import { faLock }               from '@fortawesome/free-solid-svg-icons'
-import AppButton                from './assets/AppButton'
+import AppButton                from '../assets/AppButton'
 
 const Login = () => {
   const [data, setData] = useState({
@@ -58,8 +58,8 @@ const Login = () => {
     }
   }
 
-  const nameChange = (e) => {
-    const val = e.target.value;
+  const onNameChange = (text) => {
+    const val = text.nativeEvent.data;
 
     if(/[^a-zA-Z0-9.]/.test(val)){
       setData({
@@ -76,8 +76,8 @@ const Login = () => {
     }
   }
 
-  const passwordChange = (e) => {
-    const val = e.target.value;
+  const onPasswordChange = (text) => {
+    const val = text.nativeEvent.data;
 
     if(/[^a-zA-Z0-9!@#$%^&*()-_+=.?]/.test(val)){
       setData({
@@ -109,7 +109,7 @@ const Login = () => {
             style={styles.textInput}
             placeholder="Your Name"
             autoCapitalize="none"
-            onChange={nameChange}
+            onChange={(text) => onNameChange(text)}
           />
         </View>
         {
@@ -130,7 +130,7 @@ const Login = () => {
             placeholder="Your Password"
             secureTextEntry={true}
             autoCapitalize="none"
-            onChange={passwordChange}
+            onChange={onPasswordChange}
           />
         </View>
         {
@@ -163,12 +163,15 @@ const styles = StyleSheet.create({
     flex: 2,
     padding: 50,
     paddingTop: 20,
+    fontFamily: 'Montserrat', 
   },
   text: {
     flex: 2,
+    fontFamily: 'Montserrat', 
   },
   label: {
-    fontSize: 20
+    fontSize: 20,
+    fontFamily: 'Montserrat', 
   },
   errorMsg: {
     color: 'red',
@@ -186,6 +189,7 @@ const styles = StyleSheet.create({
     marginTop: 0,
     marginLeft: 10,
     color: '#05375a',
+    fontFamily: 'Montserrat', 
     borderWidth: 0,
     borderStyle: 'solid',
     borderColor: '#eee'
@@ -197,11 +201,13 @@ const styles = StyleSheet.create({
   },
   footer_text: {
     fontSize: 18,
-    color: '#014C46'
+    color: '#014C46',
+    fontFamily: 'Montserrat', 
   },
   footer: {
     flex: 1,
     width: '100%',
+    fontFamily: 'Montserrat', 
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     backgroundColor: '#009387',

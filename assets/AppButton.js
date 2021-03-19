@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
   },
   appButtonText: {
     fontSize: 18,
+    fontFamily: 'Montserrat', 
     color: "#fff",
     fontWeight: "bold",
     alignSelf: "center",

@@ -5,7 +5,7 @@ import {
   StyleSheet,
 }                           from 'react-native'
 import * as Animatable      from 'react-native-animatable'
-import AppButton            from './assets/AppButton'
+import AppButton            from '../assets/AppButton'
 
 const Splash = ({ navigation }) => 
   <View style={styles.container}>
@@ -13,7 +13,7 @@ const Splash = ({ navigation }) =>
           <Animatable.Image
               animation="bounceIn"
               duration={1000}
-              source={require('./assets/logo.png')}
+              source={require('../assets/logo.png')}
               style={styles.logo}
               resizeMode="stretch"
           />
@@ -44,16 +44,19 @@ const styles = StyleSheet.create({
     flex: 2,
     justifyContent: 'center',
     alignItems: 'center',
+    fontFamily: 'Montserrat', 
   },
   title: {
     fontSize: 26,
     color: '#fff',
-    marginBottom: 10
+    marginBottom: 10,
+    fontFamily: 'Montserrat', 
   },
   text: {
     fontSize: 18,
     color: '#fff',
-    marginBottom: 10
+    marginBottom: 10,
+    fontFamily: 'Montserrat', 
   },
   button: {
     borderRadius: 30,
